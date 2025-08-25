@@ -1,5 +1,13 @@
-const setCookie = (name, value) => {
-  document.cookie = `${encodeURIComponent(name)}=${encodeURIComponent(value)};`;
+const setCookie = (name, value, options = {}) => {
+  let newEntryBody = `${encodeURIComponent(name)}=${encodeURIComponent(value)};`;
+
+  const optionsAsString = Object.entries(options).map((entry) => entry.join('=')).join('; ');
+
+  if (optionsAsString) {
+    newEntryBody += `; ${optionsAsString}`;
+  }
+
+  focument.cookie = newEntryBody;
 };
 
 const getCookie = (name) => {
