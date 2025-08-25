@@ -7,7 +7,7 @@ const setCookie = (name, value, options = {}) => {
     newEntryBody += `; ${optionsAsString}`;
   }
 
-  focument.cookie = newEntryBody;
+  document.cookie = newEntryBody;
 };
 
 const getCookie = (name) => {
@@ -21,3 +21,7 @@ const getCookie = (name) => {
     }
   }
 };
+
+const deleteCookie = (name) => {
+  setCookie(name, '', { 'max-age': -1 })
+}
