@@ -1,0 +1,20 @@
+:root {
+  --color-light: #ffffff;
+  --color-dark: #000000;
+
+  --color-text: var(var(--color-dark));
+  --color-bg: var(var(--color-dark));
+}
+
+html.is-dark-theme {
+  --color-text: var(--color-light);
+  --color-bg: var(--color-dark);
+}
+
+body {
+  padding: 1rem;
+  font-family: 'Rubik', sans-serif;
+
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
